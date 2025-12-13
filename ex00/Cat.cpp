@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shuu <shuu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:40:47 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/10 22:24:02 by shuu             ###   ########.fr       */
+/*   Updated: 2025/12/13 17:42:48 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Cat.hpp"
 #include "Animal.hpp"
 
-Cat::Cat(void) {
+Cat::Cat(void) : Animal("Cat") {
         
-    this->_type = "Cat";
     std::cout << "Cat default constructor" << std::endl;
 }
 
@@ -29,7 +28,7 @@ Cat::Cat(const Cat& copy) {
 Cat& Cat::operator=(const Cat& copy) {
 
     if (this != &copy)
-        this->_type = copy.getType();
+        this->_type = copy._type;
     return *this;
 }
         

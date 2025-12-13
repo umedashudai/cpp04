@@ -3,37 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shuu <shuu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:06:49 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/10 22:09:35 by shuu             ###   ########.fr       */
+/*   Updated: 2025/12/13 21:07:01 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) {
+Dog::Dog(void) : Animal("Dog"), _brain(new Brain()) {
 
-    this->_type = "Dog";
-    this->_brain = new Brain();
     std::cout << "Dog default constructor" << std::endl;
+
 }
 
 Dog::Dog(const Dog& copy) {
 
     std::cout << "Dog Copy constructor" << std::endl;
     if (this != &copy)
-        this->_brain = new Brain(*(copy.getBrain()));
-    else
-        this->_brain = NULL;
+    {
+        if (copy._brain)
+            this->_brain = new Brain(*(copy._brain));
+        else
+            this->_brain = NULL;
+    }
 }
         
 Dog& Dog::operator=(const Dog& copy) {
     
     if (this != &copy)
     {
-        this->_type = copy.getType();
-        this->_brain = new Brain(*(copy.getBrain()));
+        this->type = copy.type;
+        delete this->_brain;
+        this->_brain = new Brain(*(copy._brain));
     }
     return *this;
 }
@@ -43,12 +46,26 @@ Dog::~Dog(void) {
     std::cout << "Dog destructor" << std::endl;
 }
 
-Brain* Dog::getBrain(void) const {
-
-    return this->_brain;
-}
-
 void Dog::makeSound(void) const {
     
     std::cout << "ugggggrrrrrrrrgggrrrr" << std::endl;;
+}
+
+std::string Dog::getIdea(int i) const {
+
+    if (i < 0 || 100 < i)
+        return "Out of range";
+    return this->_brain->getIdea(i);
+}
+
+void Dog::addIdea(int i, std::string idea) {
+
+    if (i < 0 || 100 < i)
+        return ;
+    this->_brain->addIdea(i, idea);
+}
+
+Brain* Dog::getBrain(void) const {
+    
+    return this->_brain;
 }

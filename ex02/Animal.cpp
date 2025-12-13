@@ -3,31 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.cpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shuu <shuu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:22:35 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/09 22:37:30 by shuu             ###   ########.fr       */
+/*   Updated: 2025/12/13 19:50:53 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : _type("") {
+Animal::Animal(void) : type("") {
 
     std::cout << "Animal default constructor" << std::endl;
 }
 
-Animal::Animal(const Animal& copy) : _type("") {
+Animal::Animal(std::string type) : type(type) {
+    
+    std::cout << "Animal constructor" << std::endl;
+}
+
+Animal::Animal(const Animal& copy) : type("") {
 
     std::cout << "Animal copy constructor" << std::endl;
     if (this != &copy)
         *this = copy;
-}
+}   
 
 Animal& Animal::operator=(const Animal& copy) {
 
     if (this != &copy)
-        this->_type = copy.getType();
+        this->type = copy.type;
     return *this;
 }
 
@@ -38,7 +43,7 @@ Animal::~Animal(void) {
 
 const std::string& Animal::getType(void) const {
 
-    return this->_type;
+    return this->type;
 }
 
 void Animal::makeSound(void) const {

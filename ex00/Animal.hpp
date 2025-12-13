@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Animal.hpp                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shuu <shuu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:18:44 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/09 20:21:14 by shuu             ###   ########.fr       */
+/*   Updated: 2025/12/13 18:57:41 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ class Animal {
         std::string _type;
     public:
         Animal(void);
+        Animal(std::string type);
         Animal(const Animal& copy);
         Animal& operator=(const Animal& copy);
         ~Animal(void);

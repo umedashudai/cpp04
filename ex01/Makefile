@@ -1,5 +1,5 @@
 NAME = animal
-SRC = Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp
+SRC = Animal.cpp Cat.cpp Dog.cpp WrongAnimal.cpp WrongCat.cpp main.cpp Brain.cpp
 OBJ = $(SRC:%.cpp=%.o)
 CC = c++
 FLAGS = -Wall -Wextra -Werror -std=c++98 -pedantic
@@ -19,6 +19,6 @@ clean:
 fclean: clean
 	$(RM) $(NAME)
 
-re: flcean all
+re: fclean all
 
 .PHONY: all clean fclean re

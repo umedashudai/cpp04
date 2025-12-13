@@ -3,18 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shuu <shuu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:06:49 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/10 22:24:16 by shuu             ###   ########.fr       */
+/*   Updated: 2025/12/13 17:34:40 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Dog.hpp"
 
-Dog::Dog(void) {
+Dog::Dog(void) : Animal("Dog") {
 
-    this->_type = "Dog";
     std::cout << "Dog default constructor" << std::endl;
 }
 
@@ -28,7 +27,7 @@ Dog::Dog(const Dog& copy) {
 Dog& Dog::operator=(const Dog& copy) {
     
     if (this != &copy)
-        this->_type = copy.getType();
+        this->_type = copy._type;
     return *this;
 }
 

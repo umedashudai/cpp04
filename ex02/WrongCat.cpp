@@ -3,19 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: shuu <shuu@student.42.fr>                  +#+  +:+       +#+        */
+/*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:58:25 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/10 22:19:22 by shuu             ###   ########.fr       */
+/*   Updated: 2025/12/13 19:47:23 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongCat.hpp"
 #include "WrongAnimal.hpp"
 
-WrongCat::WrongCat(void) {
+WrongCat::WrongCat(void) : WrongAnimal("WrongCat") {
         
-    this->_type = "WrongCat";
     std::cout << "WrongCat default constructor" << std::endl;
 }
 
@@ -29,7 +28,7 @@ WrongCat::WrongCat(const WrongCat& copy) {
 WrongCat& WrongCat::operator=(const WrongCat& copy) {
 
     if (this != &copy)
-        this->_type = copy.getType();
+        this->type = copy.type;
     return *this;
 }
         
