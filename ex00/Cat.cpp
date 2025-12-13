@@ -6,7 +6,7 @@
 /*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:40:47 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/13 17:42:48 by sumedai          ###   ########.fr       */
+/*   Updated: 2025/12/13 21:27:16 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ Cat::Cat(const Cat& copy) {
 Cat& Cat::operator=(const Cat& copy) {
 
     if (this != &copy)
-        this->_type = copy._type;
+        this->type = copy.type;
     return *this;
 }
         

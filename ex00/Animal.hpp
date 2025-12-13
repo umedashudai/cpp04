@@ -6,7 +6,7 @@
 /*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:18:44 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/13 18:57:41 by sumedai          ###   ########.fr       */
+/*   Updated: 2025/12/13 21:28:21 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@
 class Animal {
 
     protected:
-        std::string _type;
+        std::string type;
     public:
         Animal(void);
         Animal(std::string type);

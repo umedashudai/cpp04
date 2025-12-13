@@ -6,23 +6,23 @@
 /*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 21:54:12 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/13 18:58:44 by sumedai          ###   ########.fr       */
+/*   Updated: 2025/12/13 21:27:53 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "WrongAnimal.hpp"
 
-WrongAnimal::WrongAnimal(void) : _type("") {
+WrongAnimal::WrongAnimal(void) : type("") {
 
     std::cout << "WrongAnimal default constructor" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(std::string type) : _type(type) {
+WrongAnimal::WrongAnimal(std::string type) : type(type) {
 
     std::cout << "WrongAnimal constructor" << std::endl;
 }
 
-WrongAnimal::WrongAnimal(const WrongAnimal& copy) : _type("") {
+WrongAnimal::WrongAnimal(const WrongAnimal& copy) : type("") {
 
     std::cout << "WrogAnimal copy constructor" << std::endl;
     if (this != &copy)
@@ -32,7 +32,7 @@ WrongAnimal::WrongAnimal(const WrongAnimal& copy) : _type("") {
 WrongAnimal& WrongAnimal::operator=(const WrongAnimal& copy) {
 
     if (this != &copy)
-        this->_type = copy._type;
+        this->type = copy.type;
     return *this;
 }
 
@@ -43,7 +43,7 @@ WrongAnimal::~WrongAnimal(void) {
 
 const std::string& WrongAnimal::getType(void) const {
 
-    return this->_type;
+    return this->type;
 }
 
 void WrongAnimal::makeSound(void) const {
