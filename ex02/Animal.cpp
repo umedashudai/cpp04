@@ -6,13 +6,13 @@
 /*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:22:35 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/13 19:50:53 by sumedai          ###   ########.fr       */
+/*   Updated: 2025/12/14 19:54:10 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Animal.hpp"
 
-Animal::Animal(void) : type("") {
+Animal::Animal(void) : type("default") {
 
     std::cout << "Animal default constructor" << std::endl;
 }
@@ -22,7 +22,7 @@ Animal::Animal(std::string type) : type(type) {
     std::cout << "Animal constructor" << std::endl;
 }
 
-Animal::Animal(const Animal& copy) : type("") {
+Animal::Animal(const Animal& copy) : type("default") {
 
     std::cout << "Animal copy constructor" << std::endl;
     if (this != &copy)

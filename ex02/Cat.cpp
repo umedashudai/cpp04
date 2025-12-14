@@ -6,7 +6,7 @@
 /*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:40:47 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/14 11:05:22 by sumedai          ###   ########.fr       */
+/*   Updated: 2025/12/14 11:41:44 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ Cat::Cat(void) : Animal("Cat"), _brain(new Brain()) {
     std::cout << "Cat default constructor" << std::endl;
 }
 
-Cat::Cat(const Cat& copy) {
+Cat::Cat(const Cat& copy) : Animal("Cat"), _brain(new Brain()) {
 
 	std::cout << "Cat copy constructor" << std::endl;
     if (this != &copy)
