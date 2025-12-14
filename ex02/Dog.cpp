@@ -6,7 +6,7 @@
 /*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/09 20:06:49 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/13 21:07:01 by sumedai          ###   ########.fr       */
+/*   Updated: 2025/12/14 11:19:32 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ Dog& Dog::operator=(const Dog& copy) {
     {
         this->type = copy.type;
         delete this->_brain;
-        this->_brain = new Brain(*(copy._brain));
+        if (copy._brain)
+            this->_brain = new Brain(*(copy._brain));
+        else
+            this->_brain = NULL;
     }
     return *this;
 }
@@ -44,6 +47,7 @@ Dog& Dog::operator=(const Dog& copy) {
 Dog::~Dog(void) {
     
     std::cout << "Dog destructor" << std::endl;
+    delete this->_brain;
 }
 
 void Dog::makeSound(void) const {

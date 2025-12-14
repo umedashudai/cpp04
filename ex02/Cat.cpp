@@ -6,7 +6,7 @@
 /*   By: sumedai <sumedai@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/01 11:40:47 by shuu              #+#    #+#             */
-/*   Updated: 2025/12/13 21:04:55 by sumedai          ###   ########.fr       */
+/*   Updated: 2025/12/14 11:05:22 by sumedai          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ Cat& Cat::operator=(const Cat& copy) {
 Cat::~Cat(void) {
 
     std::cout << "Cat destructor" << std::endl;
+    delete this->_brain;
 }
 
 void Cat::makeSound(void) const {

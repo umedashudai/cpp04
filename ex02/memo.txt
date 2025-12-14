@@ -1,1 +1,0 @@
-Animal * meta = new Cat()のようにAnimalポインタを使用した時のdeleteでメモリを解放したいが、Animalデストラクタをvturalにする必要があるのか後で調べる。
